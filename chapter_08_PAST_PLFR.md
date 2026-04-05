@@ -34,7 +34,7 @@ An unstructured prompt is a single string of natural language that the model mus
 
 A prompt with three sub-tasks doesn't have 3x the ambiguity of a single-task prompt. It has closer to 3^n ambiguity, where n is the number of unstated dependencies between sub-tasks. "Compare Q3 to Q2" presupposes the model knows which metric, which segmentation, and which data source. Stack three such presuppositions and the model is choosing from a combinatorial space of interpretations — with no mechanism to surface the choice it made.
 
-![Figure 1 — The Ambiguity Multiplier](figures/fig1_ambiguity_multiplier.svg)
+![fig1_ambiguity_multiplier](https://github.com/user-attachments/assets/06b67465-4585-4f4c-9211-62d2081223ab)
 
 *Figure 1: As sub-tasks increase, the interpretation space grows exponentially (≈3ⁿ). A single-task prompt has roughly 3 plausible interpretations; a three-task prompt with unstated dependencies has 27. Structured frameworks exist to collapse this space before the model encounters it.*
 
@@ -53,7 +53,7 @@ PAST decomposes a prompt into four explicit layers:
 
 The architectural insight is that PAST **linearizes task execution**. By forcing the prompt author to enumerate steps, PAST converts a parallel-ambiguous instruction ("do all of this") into a sequential-explicit one ("do this, then this, then this"). The model processes a queue, not a cloud.
 
-![Figure 2 — PAST Framework Anatomy](figures/fig2_past_anatomy.svg)
+![fig2_past_anatomy](https://github.com/user-attachments/assets/938437ed-5140-4bde-80f9-41393b806440)
 
 *Figure 2: The PAST framework as a vertical pipeline. Problem scopes the reasoning space, Action constrains the operation, Steps linearizes execution into a numbered queue, and Task anchors the output contract. The Steps layer is expanded to show sequential sub-boxes — this is the layer that converts ambiguity into sequence. Strength: completeness. Weakness: no reasoning constraint.*
 
@@ -90,7 +90,7 @@ PLFR operates on a different axis. Where PAST linearizes execution, PLFR **contr
 
 PLFR's architectural contribution is the **Logic** component. PAST tells the model *what* to do step-by-step. PLFR tells the model *how to reason*. This distinction becomes critical in agentic systems where agents must not only execute tasks but justify their outputs to downstream agents.
 
-![Figure 3 — PLFR Framework Anatomy](figures/fig3_plfr_anatomy.svg)
+![fig3_plfr_anatomy](https://github.com/user-attachments/assets/10e466a6-7210-4519-afcc-9a7c9361bc6d)
 
 *Figure 3: The PLFR framework. The Logic layer is visually dominant because it is architecturally dominant — it is the component that distinguishes PLFR from a simple format template. The feedback arrow from Result back to Logic enables self-validation against the reasoning method. Compare with Figure 2: PAST constrains WHAT the model does; PLFR constrains HOW it reasons.*
 
@@ -121,7 +121,7 @@ This is not a "pick your favorite" situation. PAST and PLFR solve different prob
 | Agentic role | Task decomposition for planning agents | Communication contract between reasoning agents |
 | Best for | Report generation, data pipelines, code review workflows | Classification, diagnosis, scoring, evaluation |
 
-![Figure 4 — PAST vs. PLFR Decision Landscape](figures/fig4_decision_landscape.svg)
+![fig4_decision_landscape](https://github.com/user-attachments/assets/cfc38d56-2735-49ad-bd65-ffe1446fc059)
 
 *Figure 4: PAST (left) operates as structural scaffolding — it constrains what the model does. PLFR (right) operates as a reasoning network — it constrains how the model thinks. For complex agentic tasks (center of spectrum), both frameworks are required in a layered architecture.*
 
@@ -129,7 +129,7 @@ This is not a "pick your favorite" situation. PAST and PLFR solve different prob
 
 In production agentic systems, PAST and PLFR are not alternatives — they are layers. The planning agent uses PAST to decompose a user request into sub-tasks. Each sub-task is dispatched to an execution agent using a PLFR-formatted instruction that specifies the reasoning method and output contract.
 
-![Figure 5 — Two-Layer Agentic Architecture](figures/fig5_two_layer_architecture.svg)
+![fig5_two_layer_architecture](https://github.com/user-attachments/assets/923fb3b4-f51b-46b4-b793-6e1586b6f194)
 
 *Figure 5: The core architectural claim. The Planning Agent (top, steel blue) uses PAST to decompose the user request into sequential steps. Each step is dispatched to an Execution Agent (bottom, amber) wrapped in a PLFR contract that specifies the reasoning method, output format, and validation criteria. This two-layer nesting — PAST for decomposition, PLFR for execution — is what prevents the "structured but wrong" failure.*
 
@@ -173,7 +173,7 @@ PLFR addition to Step 2:
 
 This is the architectural argument: **structure without reasoning specification is a false guarantee.** PAST provides the skeleton. PLFR provides the brain. An agentic pipeline that uses PAST alone for task decomposition will produce outputs that *look* correct because they follow the prescribed format, while silently applying the wrong analytical method at every reasoning step.
 
-![Figure 6 — The "Confidently Structured, Silently Wrong" Failure](figures/fig6_failure_mode.svg)
+![fig6_failure_mode](https://github.com/user-attachments/assets/3d3f34dc-e673-40b7-bf28-144b382af111)
 
 *Figure 6: The same churn data flows through two pipelines. The PAST-only pipeline (left, amber) follows "identify highest churn" and returns Enterprise at 12% — the highest absolute rate. The PAST+PLFR pipeline (right, blue) applies the Logic component "use absolute delta" and returns Free at +5.5pp — the highest churn increase. The business decisions are opposite. Red ✗ and green ✓ indicators use shapes (not just color) for accessibility.*
 
@@ -257,8 +257,7 @@ In the demo notebook, the AI scaffold proposes an agent coordination structure b
 # YOUR REASONING: ___________________________________________
 # ══════════════════════════════════════════════════════════
 ```
-
-![Figure 7 — Pipeline Topology: Human Decision Node](figures/fig7_human_decision_node.svg)
+![fig7_human_decision_node](https://github.com/user-attachments/assets/61ab8549-8197-42f5-a9d8-80c7d11cfa09)
 
 *Figure 7: The AI proposed parallel execution (left, dashed amber border) for Steps 2 and 3. The Human Decision Node (center diamond) detects a hidden semantic dependency: Step 3 references "flagged tiers," computed in Step 2. The human overrides to sequential execution (right, solid blue border). The green arrow highlights the corrected dependency. The AI parsed dependencies syntactically; the human traced them semantically.*
 
