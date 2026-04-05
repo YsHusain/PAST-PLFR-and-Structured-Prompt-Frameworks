@@ -1,0 +1,93 @@
+<svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect width="700" height="520" fill="white"/>
+
+  <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 5 — Two-Layer Agentic Architecture (PAST + PLFR)</text>
+
+  <!-- User Request -->
+  <rect x="220" y="42" width="260" height="36" rx="18" fill="#E0E0E0" stroke="#999" stroke-width="1"/>
+  <text x="350" y="65" text-anchor="middle" font-size="11" fill="#555">User Request (unstructured natural language)</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="78" x2="350" y2="98" stroke="#6B7B8D" stroke-width="2"/>
+  <polygon points="345,96 350,105 355,96" fill="#6B7B8D"/>
+
+  <!-- PLANNING LAYER -->
+  <rect x="60" y="108" width="580" height="120" rx="8" fill="#4682B4" opacity="0.1" stroke="#4682B4" stroke-width="2"/>
+  <text x="80" y="128" font-size="12" font-weight="bold" fill="#4682B4">PLANNING LAYER</text>
+
+  <!-- Planning Agent box -->
+  <rect x="100" y="138" width="500" height="75" rx="6" fill="#4682B4"/>
+  <text x="350" y="157" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Planning Agent — PAST Framework</text>
+
+  <!-- PAST components inline -->
+  <rect x="120" y="167" width="90" height="30" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)"/>
+  <text x="165" y="186" text-anchor="middle" font-size="10" fill="white">Problem</text>
+  <text x="220" y="186" font-size="14" fill="white">→</text>
+  <rect x="233" y="167" width="80" height="30" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)"/>
+  <text x="273" y="186" text-anchor="middle" font-size="10" fill="white">Action</text>
+  <text x="323" y="186" font-size="14" fill="white">→</text>
+  <rect x="338" y="167" width="70" height="30" rx="4" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.7)"/>
+  <text x="373" y="186" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Steps</text>
+  <text x="418" y="186" font-size="14" fill="white">→</text>
+  <rect x="433" y="167" width="70" height="30" rx="4" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)"/>
+  <text x="468" y="186" text-anchor="middle" font-size="10" fill="white">Task</text>
+
+  <!-- Dispatch arrows -->
+  <text x="350" y="248" text-anchor="middle" font-size="9" fill="#6B7B8D" font-style="italic">Sub-task dispatch (PLFR envelope)</text>
+
+  <line x1="200" y1="228" x2="140" y2="280" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="137,275 137,284 145,280" fill="#6B7B8D"/>
+  <line x1="350" y1="228" x2="350" y2="280" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="345,278 350,287 355,278" fill="#6B7B8D"/>
+  <line x1="500" y1="228" x2="560" y2="280" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="555,276 563,284 563,276" fill="#6B7B8D"/>
+
+  <!-- EXECUTION LAYER -->
+  <rect x="60" y="270" width="580" height="155" rx="8" fill="#D4A04A" opacity="0.08" stroke="#D4A04A" stroke-width="2"/>
+  <text x="80" y="290" font-size="12" font-weight="bold" fill="#D4A04A">EXECUTION LAYER</text>
+
+  <!-- Agent A -->
+  <rect x="75" y="300" width="160" height="110" rx="6" fill="#D4A04A"/>
+  <text x="155" y="320" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Execution Agent A</text>
+  <text x="155" y="334" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">PLFR Contract</text>
+  <rect x="88" y="342" width="134" height="18" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <text x="155" y="355" text-anchor="middle" font-size="8" fill="white">Prompt | Logic | Format | Result</text>
+  <rect x="88" y="366" width="134" height="30" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="155" y="380" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">Logic: delta-based</text>
+  <text x="155" y="392" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">comparison method</text>
+
+  <!-- Agent B -->
+  <rect x="270" y="300" width="160" height="110" rx="6" fill="#D4A04A" opacity="0.9"/>
+  <text x="350" y="320" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Execution Agent B</text>
+  <text x="350" y="334" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">PLFR Contract</text>
+  <rect x="283" y="342" width="134" height="18" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <text x="350" y="355" text-anchor="middle" font-size="8" fill="white">Prompt | Logic | Format | Result</text>
+  <rect x="283" y="366" width="134" height="30" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="350" y="380" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">Logic: NPS correlation</text>
+  <text x="350" y="392" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">on flagged tiers only</text>
+
+  <!-- Agent C -->
+  <rect x="465" y="300" width="160" height="110" rx="6" fill="#D4A04A" opacity="0.8"/>
+  <text x="545" y="320" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Execution Agent C</text>
+  <text x="545" y="334" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">PLFR Contract</text>
+  <rect x="478" y="342" width="134" height="18" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <text x="545" y="355" text-anchor="middle" font-size="8" fill="white">Prompt | Logic | Format | Result</text>
+  <rect x="478" y="366" width="134" height="30" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <text x="545" y="380" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">Logic: cite specific data</text>
+  <text x="545" y="392" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.7)">per recommendation</text>
+
+  <!-- Convergence arrows -->
+  <line x1="155" y1="410" x2="300" y2="455" stroke="#6B7B8D" stroke-width="1.5"/>
+  <line x1="350" y1="410" x2="350" y2="455" stroke="#6B7B8D" stroke-width="1.5"/>
+  <line x1="545" y1="410" x2="400" y2="455" stroke="#6B7B8D" stroke-width="1.5"/>
+
+  <!-- Assembled Output -->
+  <rect x="250" y="458" width="200" height="36" rx="6" fill="#6B7B8D"/>
+  <text x="350" y="481" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Assembled Output</text>
+
+  <!-- Layer labels on right -->
+  <rect x="650" y="140" width="4" height="70" fill="#4682B4"/>
+  <text x="660" y="180" font-size="8" fill="#4682B4">PAST</text>
+  <rect x="650" y="300" width="4" height="110" fill="#D4A04A"/>
+  <text x="660" y="360" font-size="8" fill="#D4A04A">PLFR</text>
+</svg>

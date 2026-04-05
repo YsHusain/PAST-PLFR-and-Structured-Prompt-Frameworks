@@ -1,0 +1,64 @@
+<svg viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect width="500" height="480" fill="white"/>
+
+  <text x="250" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 2 — PAST Framework Anatomy</text>
+
+  <!-- Left bracket -->
+  <path d="M 45 60 L 35 60 L 35 370 L 45 370" fill="none" stroke="#6B7B8D" stroke-width="1.5"/>
+  <text x="30" y="220" text-anchor="middle" font-size="10" fill="#6B7B8D" transform="rotate(-90,30,220)">Parallel-ambiguous → Sequential-explicit</text>
+
+  <!-- Problem -->
+  <rect x="70" y="50" width="300" height="55" rx="6" fill="#4682B4"/>
+  <text x="220" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="white">P — Problem</text>
+  <text x="220" y="93" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">Scopes the reasoning space</text>
+  <!-- Role annotation -->
+  <text x="390" y="75" font-size="9" fill="#6B7B8D" font-style="italic">What context?</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="105" x2="220" y2="125" stroke="#6B7B8D" stroke-width="2"/>
+  <polygon points="215,123 220,132 225,123" fill="#6B7B8D"/>
+
+  <!-- Action -->
+  <rect x="70" y="135" width="300" height="55" rx="6" fill="#5A93C4"/>
+  <text x="220" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="white">A — Action</text>
+  <text x="220" y="178" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">Constrains the operation type</text>
+  <text x="390" y="160" font-size="9" fill="#6B7B8D" font-style="italic">What verb?</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="190" x2="220" y2="210" stroke="#6B7B8D" stroke-width="2"/>
+  <polygon points="215,208 220,217 225,208" fill="#6B7B8D"/>
+
+  <!-- Steps (expanded) -->
+  <rect x="70" y="220" width="300" height="90" rx="6" fill="#D4A04A"/>
+  <text x="220" y="242" text-anchor="middle" font-size="14" font-weight="bold" fill="white">S — Steps</text>
+  <text x="220" y="258" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">Linearizes the execution plan</text>
+  <!-- Sub-boxes for steps -->
+  <rect x="85" y="268" width="55" height="30" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+  <text x="112" y="288" text-anchor="middle" font-size="10" fill="white">Step 1</text>
+  <rect x="150" y="268" width="55" height="30" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+  <text x="177" y="288" text-anchor="middle" font-size="10" fill="white">Step 2</text>
+  <rect x="215" y="268" width="55" height="30" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+  <text x="242" y="288" text-anchor="middle" font-size="10" fill="white">Step 3</text>
+  <rect x="280" y="268" width="55" height="30" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+  <text x="307" y="288" text-anchor="middle" font-size="10" fill="white">Step 4</text>
+  <!-- Arrows between sub-steps -->
+  <line x1="140" y1="283" x2="150" y2="283" stroke="white" stroke-width="1.5"/>
+  <line x1="205" y1="283" x2="215" y2="283" stroke="white" stroke-width="1.5"/>
+  <line x1="270" y1="283" x2="280" y2="283" stroke="white" stroke-width="1.5"/>
+  <text x="390" y="255" font-size="9" fill="#6B7B8D" font-style="italic">What sequence?</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="310" x2="220" y2="330" stroke="#6B7B8D" stroke-width="2"/>
+  <polygon points="215,328 220,337 225,328" fill="#6B7B8D"/>
+
+  <!-- Task -->
+  <rect x="70" y="340" width="300" height="55" rx="6" fill="#6B7B8D"/>
+  <text x="220" y="365" text-anchor="middle" font-size="14" font-weight="bold" fill="white">T — Task</text>
+  <text x="220" y="383" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">Anchors the output contract</text>
+  <text x="390" y="365" font-size="9" fill="#6B7B8D" font-style="italic">What deliverable?</text>
+
+  <!-- Bottom note -->
+  <text x="250" y="430" text-anchor="middle" font-size="10" fill="#6B7B8D">PAST converts a parallel-ambiguous instruction</text>
+  <text x="250" y="445" text-anchor="middle" font-size="10" fill="#6B7B8D">into a sequential-explicit execution plan.</text>
+  <text x="250" y="465" text-anchor="middle" font-size="10" font-weight="bold" fill="#D4A04A">Strength: Completeness | Weakness: No reasoning constraint</text>
+</svg>

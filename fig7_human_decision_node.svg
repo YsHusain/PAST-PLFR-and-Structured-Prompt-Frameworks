@@ -1,0 +1,105 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect width="800" height="420" fill="white"/>
+
+  <text x="400" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 7 — Pipeline Topology: Human Decision Node</text>
+
+  <!-- LEFT PANEL: AI Proposed (Parallel) -->
+  <rect x="20" y="45" width="300" height="300" rx="8" fill="none" stroke="#D4A04A" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="170" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#D4A04A">AI Proposed: Parallel</text>
+
+  <!-- Step 1 -->
+  <rect x="105" y="82" width="130" height="35" rx="5" fill="#4682B4"/>
+  <text x="170" y="104" text-anchor="middle" font-size="10" fill="white">Step 1: Extract data</text>
+
+  <!-- Fork arrows from Step 1 -->
+  <line x1="140" y1="117" x2="95" y2="155" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="92,150 92,159 100,155" fill="#6B7B8D"/>
+  <line x1="200" y1="117" x2="245" y2="155" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="240,151 248,155 248,159" fill="#6B7B8D"/>
+
+  <!-- Step 2 (parallel) -->
+  <rect x="35" y="160" width="120" height="35" rx="5" fill="#D4A04A"/>
+  <text x="95" y="182" text-anchor="middle" font-size="9" fill="white">Step 2: Compute deltas</text>
+
+  <!-- Step 3 (parallel) -->
+  <rect x="185" y="160" width="120" height="35" rx="5" fill="#D4A04A"/>
+  <text x="245" y="182" text-anchor="middle" font-size="9" fill="white">Step 3: NPS cross-ref</text>
+
+  <!-- Parallel indicator -->
+  <text x="170" y="180" text-anchor="middle" font-size="20" fill="#D4A04A">‖</text>
+
+  <!-- Join arrows to Step 4 -->
+  <line x1="95" y1="195" x2="140" y2="235" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="137,230 137,239 145,235" fill="#6B7B8D"/>
+  <line x1="245" y1="195" x2="200" y2="235" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="195,231 203,235 203,239" fill="#6B7B8D"/>
+
+  <!-- Step 4 -->
+  <rect x="105" y="240" width="130" height="35" rx="5" fill="#6B7B8D"/>
+  <text x="170" y="262" text-anchor="middle" font-size="10" fill="white">Step 4: Recommend</text>
+
+  <!-- Problem annotation -->
+  <rect x="40" y="290" width="260" height="40" rx="4" fill="#FFEBEE" stroke="#C62828" stroke-width="1"/>
+  <text x="170" y="307" text-anchor="middle" font-size="9" fill="#C62828" font-weight="bold">⚠ Step 3 runs WITHOUT flag data</text>
+  <text x="170" y="322" text-anchor="middle" font-size="8" fill="#C62828">Must cross-reference ALL tiers (wasteful)</text>
+
+  <!-- CENTRAL: Human Decision Node -->
+  <g transform="translate(370, 185)">
+    <!-- Diamond -->
+    <polygon points="0,-40 50,0 0,40 -50,0" fill="#4682B4" stroke="#2C5F8A" stroke-width="2"/>
+    <text x="0" y="-8" text-anchor="middle" font-size="8" fill="white" font-weight="bold">HUMAN</text>
+    <text x="0" y="5" text-anchor="middle" font-size="8" fill="white" font-weight="bold">DECISION</text>
+    <text x="0" y="18" text-anchor="middle" font-size="8" fill="white" font-weight="bold">NODE</text>
+  </g>
+
+  <!-- Arrows into and out of diamond -->
+  <line x1="320" y1="185" x2="320" y2="185" stroke="#6B7B8D" stroke-width="1.5"/>
+  <line x1="420" y1="185" x2="475" y2="185" stroke="#4682B4" stroke-width="2"/>
+  <polygon points="473,180 482,185 473,190" fill="#4682B4"/>
+
+  <!-- Annotation below diamond -->
+  <text x="370" y="240" text-anchor="middle" font-size="9" fill="#4682B4" font-style="italic">Hidden dependency</text>
+  <text x="370" y="253" text-anchor="middle" font-size="9" fill="#4682B4" font-style="italic">detected → topology</text>
+  <text x="370" y="266" text-anchor="middle" font-size="9" fill="#4682B4" font-style="italic">changed</text>
+
+  <!-- RIGHT PANEL: Human Override (Sequential) -->
+  <rect x="480" y="45" width="300" height="300" rx="8" fill="none" stroke="#4682B4" stroke-width="2.5"/>
+  <text x="630" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#4682B4">Human Override: Sequential</text>
+
+  <!-- Step 1 -->
+  <rect x="565" y="82" width="130" height="35" rx="5" fill="#4682B4"/>
+  <text x="630" y="104" text-anchor="middle" font-size="10" fill="white">Step 1: Extract data</text>
+
+  <!-- Arrow -->
+  <line x1="630" y1="117" x2="630" y2="150" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="625,148 630,157 635,148" fill="#6B7B8D"/>
+
+  <!-- Step 2 -->
+  <rect x="565" y="160" width="130" height="35" rx="5" fill="#D4A04A"/>
+  <text x="630" y="182" text-anchor="middle" font-size="9" fill="white">Step 2: Compute deltas</text>
+
+  <!-- HIGHLIGHTED dependency arrow -->
+  <line x1="630" y1="195" x2="630" y2="225" stroke="#2E7D32" stroke-width="3"/>
+  <polygon points="624,223 630,234 636,223" fill="#2E7D32"/>
+  <!-- Dependency label -->
+  <rect x="648" y="200" width="120" height="26" rx="3" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1"/>
+  <text x="708" y="212" text-anchor="middle" font-size="7.5" fill="#2E7D32" font-weight="bold">Step 3 needs flagged</text>
+  <text x="708" y="222" text-anchor="middle" font-size="7.5" fill="#2E7D32" font-weight="bold">tiers from Step 2</text>
+
+  <!-- Step 3 -->
+  <rect x="565" y="238" width="130" height="35" rx="5" fill="#D4A04A"/>
+  <text x="630" y="260" text-anchor="middle" font-size="9" fill="white">Step 3: NPS cross-ref</text>
+
+  <!-- Arrow -->
+  <line x1="630" y1="273" x2="630" y2="300" stroke="#6B7B8D" stroke-width="1.5"/>
+  <polygon points="625,298 630,307 635,298" fill="#6B7B8D"/>
+
+  <!-- Step 4 -->
+  <rect x="565" y="310" width="130" height="35" rx="5" fill="#6B7B8D"/>
+  <text x="630" y="332" text-anchor="middle" font-size="10" fill="white">Step 4: Recommend</text>
+
+  <!-- Bottom annotation -->
+  <rect x="150" y="370" width="500" height="40" rx="6" fill="#F5F5F5" stroke="#6B7B8D" stroke-width="0.5"/>
+  <text x="400" y="388" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">The AI parsed dependencies syntactically (field matching).</text>
+  <text x="400" y="403" text-anchor="middle" font-size="10" fill="#6B7B8D">The human traced dependencies semantically ("flagged tiers" → Step 2 output).</text>
+</svg>
