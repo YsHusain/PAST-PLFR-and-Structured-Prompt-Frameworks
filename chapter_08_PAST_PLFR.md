@@ -1,4 +1,4 @@
-![fig1_ambiguity_multiplier](https://github.com/user-attachments/assets/41020924-dfa1-4ad4-b344-cb725f03d119)# Chapter 8: PAST, PLFR, and Structured Prompt Frameworks
+# Chapter 8: PAST, PLFR, and Structured Prompt Frameworks
 
 ## Learning Outcomes
 
