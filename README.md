@@ -1,7 +1,4 @@
 # Chapter 8: PAST, PLFR, and Structured Prompt Frameworks
-**Structured Decomposition as Architectural Scaffolding**
-From the book *Design of Agentic Systems with Case Studies*
-
 ## 🎯 Core Claim
 
 Structured prompt frameworks — PAST (Problem, Action, Steps, Task) and PLFR (Prompt, Logic, Format, Result) — impose logical scaffolding that reduces ambiguity and improves output reliability at scale. The layered combination of PAST for task decomposition and PLFR for reasoning contracts prevents the "confidently structured, silently wrong" failure where correctly formatted outputs silently apply the wrong analytical method.
