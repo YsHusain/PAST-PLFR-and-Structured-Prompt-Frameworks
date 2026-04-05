@@ -294,4 +294,4 @@ This is the architectural moment where the human overrides or confirms the AI's 
 
 ---
 
-*Chapter 8 of Design of Agentic Systems with Case Studies. The master argument of this book is that architecture is the leverage point, not the model. This chapter demonstrates that claim through the specific case of prompt architecture: the structure you impose on instructions determines the quality of outputs more than the model you choose to execute them.*
+* The master argument of this book is that architecture is the leverage point, not the model. This chapter demonstrates that claim through the specific case of prompt architecture: the structure you impose on instructions determines the quality of outputs more than the model you choose to execute them.*
