@@ -16,19 +16,13 @@ Structured prompt frameworks — PAST (Problem, Action, Steps, Task) and PLFR (P
 
 The system layers two complementary frameworks — PAST at the planning layer and PLFR at the execution layer:
 
-![Two-Layer Agentic Architecture](figures/fig5_two_layer_architecture.svg)
+![fig5_two_layer_architecture](https://github.com/user-attachments/assets/923fb3b4-f51b-46b4-b793-6e1586b6f194)
 
 Each execution agent receives a PLFR contract — it cannot choose its own analytical method. The **Logic** component (★) is the architectural primitive that prevents method non-determinism.
 
 ### PAST Framework — Linearizes Execution
 
-![PAST Framework Anatomy](figures/fig2_past_anatomy.svg)
-
-PAST converts parallel-ambiguous instructions into sequential-explicit plans. Its strength is completeness; its weakness is that it constrains *what* the model does without constraining *how* it reasons.
-
-### PLFR Framework — Contracts Reasoning
-
-![PLFR Framework Anatomy](figures/fig3_plfr_anatomy.svg)
+![fig2_past_anatomy](https://github.com/user-attachments/assets/938437ed-5140-4bde-80f9-41393b806440)
 
 PLFR specifies the analytical method, output schema, and validation criteria. The Logic layer is architecturally dominant — it is what distinguishes PLFR from a simple format template. The feedback arrow from Result back to Logic enables self-validation.
 
@@ -45,11 +39,11 @@ The LLM executes the architecture. It does not design it.
 
 ### When to Use PAST vs. PLFR
 
-![PAST vs. PLFR Decision Landscape](figures/fig4_decision_landscape.svg)
+![fig4_decision_landscape](https://github.com/user-attachments/assets/cfc38d56-2735-49ad-bd65-ffe1446fc059)
 
 ### The Human Decision Node
 
-![Pipeline Topology: Human Decision Node](figures/fig7_human_decision_node.svg)
+![fig7_human_decision_node](https://github.com/user-attachments/assets/61ab8549-8197-42f5-a9d8-80c7d11cfa09)
 
 When the AI scaffold proposes a pipeline topology, the system **halts** and requires explicit human verification of semantic dependencies. In this case, the AI proposed parallel execution for Steps 2 and 3. The human detected a hidden dependency ("flagged tiers" in Step 3 are computed by Step 2) and overrode to sequential execution. This is an architectural primitive, not a safety disclaimer.
 
@@ -92,13 +86,13 @@ In the notebook, run **Section 6** — remove the Logic component and execute 10
 
 ### The Ambiguity Multiplier
 
-![The Ambiguity Multiplier](figures/fig1_ambiguity_multiplier.svg)
+![fig1_ambiguity_multiplier](https://github.com/user-attachments/assets/06b67465-4585-4f4c-9211-62d2081223ab)
 
 Ambiguity grows exponentially (≈3ⁿ) with the number of unstated dependencies between sub-tasks. Structured frameworks collapse this space before the model encounters it.
 
 ### The Failure — Same Data, Opposite Decisions
 
-![Confidently Structured, Silently Wrong](figures/fig6_failure_mode.svg)
+![fig6_failure_mode](https://github.com/user-attachments/assets/3d3f34dc-e673-40b7-bf28-144b382af111)
 
 When you remove the PLFR Logic component and use PAST-only, the model defaults to absolute rate comparison and identifies **Enterprise** (12.0% — stable, no change) as the primary churn driver. With PLFR's Logic component specifying delta-based comparison, the model correctly identifies **Free** (+5.5pp — massive spike) as the driver.
 
@@ -122,7 +116,6 @@ The model was correct both times. The architecture was different.
 ├── chapter_08_PAST_PLFR.md          # Full chapter prose with 7 embedded figures (~620 lines)
 ├── chapter_08_notebook.ipynb         # Runnable demo — failure case, AI scaffold, full pipeline
 ├── authors_note.docx                # 3-page author's note (design choices, tool usage, self-assessment)
-├── video_storyboard.md              # 10-min video script (Explain → Show → Try)
 ├── README.md                        # This file
 └── figures/
     ├── fig1_ambiguity_multiplier.svg    # Exponential 3ⁿ branching + inset chart
@@ -159,7 +152,6 @@ This chapter was iteratively refined using the prescribed pedagogical tools:
 | **Bookie the Bookmaker** | 3 rounds | Rejected survey-style framing (PAST/PLFR/RACE/CRISPE taxonomy) → narrowed to architectural argument with complementary failure modes |
 | **Eddy the Editor** | 1 full audit | Flagged: (1) ambiguity multiplier described but not mechanistically explained, (2) failure case described as risk not demonstrated, (3) exercise asked reader to "think about" not "trigger" |
 | **Figure Architect** | 1 zone analysis | Identified 7 high-assertion zones; generated structural + aesthetic prompts for all 7 figures following colorblind-accessible palette (steel blue / warm amber / slate grey) |
-| **Courses** | 1 run | Generated 5 Bloom's-aligned learning outcomes driving prose structure, demo design, and video sequence |
 
 ---
 
