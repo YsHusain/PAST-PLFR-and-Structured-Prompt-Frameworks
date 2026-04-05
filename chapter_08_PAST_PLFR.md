@@ -1,4 +1,4 @@
-![fig7_human_decision_node](https://github.com/user-attachments/assets/67c4d31f-ec06-4eff-be8c-c58228f647b2)![fig6_failure_mode](https://github.com/user-attachments/assets/e7774a21-37c9-4d86-880e-e7129bb3a423)![fig5_two_layer_architecture](https://github.com/user-attachments/assets/24972c88-6a07-4f14-8ef4-50835a0b65b4)![fig4_decision_landscape](https://github.com/user-attachments/assets/196eb053-ae6c-465b-832b-a679cadc6452)![fig3_plfr_anatomy](https://github.com/user-attachments/assets/ff2f78ed-9f30-4e98-a8d0-2de0d51e0175)![fig1_ambiguity_multiplier](https://github.com/user-attachments/assets/bce422f2-a44d-4d8f-ba56-0b0fbc6e3895)# Chapter 8: PAST, PLFR, and Structured Prompt Frameworks
+# Chapter 8: PAST, PLFR, and Structured Prompt Frameworks
 
 ## Learning Outcomes
 
